@@ -16,7 +16,7 @@ Examples for Tinkoff Invest API with Python https://github.com/Tinkoff/invest-py
     $ poetry env info --path
 
 6. Run application \
-    $ poetry run ql application_name --help
+    $ poetry run application_name --help
 
 ### Available [examples](https://github.com/RuslanKosarev/tinkoff-invest-examples/tree/main/examples) of the project
 
