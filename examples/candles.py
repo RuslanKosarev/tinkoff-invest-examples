@@ -1,7 +1,7 @@
 
 import pandas as pd
 from tinkoff.invest import CandleInterval, Client
-from examples.secrets import get_secrets
+from examples.secrets.secrets import get_secrets
 
 
 def price_value(x) -> float:
@@ -12,6 +12,7 @@ def candles():
 
     figi = 'BBG011MLGP84'
     print(figi)
+
     secrets = get_secrets()
     interval = CandleInterval.CANDLE_INTERVAL_DAY
 
@@ -39,3 +40,7 @@ def candles():
 
     df = pd.DataFrame(generator())
     print(df)
+
+
+if __name__ == '__main__':
+    candles()
