@@ -1,7 +1,7 @@
 
 import pandas as pd
-from tinkoff.invest import Client, InstrumentStatus, SharesResponse, InstrumentIdType
-from tinkoff.invest.services import InstrumentsService, MarketDataService
+from tinkoff.invest import Client
+from tinkoff.invest.services import InstrumentsService
 
 from examples.secrets.secrets import get_secrets
 
