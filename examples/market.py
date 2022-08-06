@@ -37,7 +37,7 @@ def market():
             df = df.set_index('ticker')
 
             print()
-            print(f'Market instruments for {etfs.__name__} (count {len(df)})')
+            print(f'Market instruments for {instruments.__name__} (count {len(df)})')
             print(df)
 
 
