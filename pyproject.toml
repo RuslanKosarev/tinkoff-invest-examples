@@ -6,6 +6,8 @@ authors = ["Ruslan Kosarev <ruslan.kosarev@gmail.com>"]
 
 [tool.poetry.scripts]
 "candles" = "examples.candles:candles"
+"market" = "examples.market:market"
+"instrument" = "examples.instrument:instrument"
 
 [tool.poetry.dependencies]
 python = "^3.10"
