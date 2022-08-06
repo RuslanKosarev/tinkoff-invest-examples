@@ -6,4 +6,5 @@ authors = ["Ruslan Kosarev <ruslan.kosarev@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+tinkoff-investments = "^0.2.0-beta.33"
 
