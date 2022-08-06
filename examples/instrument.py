@@ -2,7 +2,7 @@
 import pandas as pd
 from tinkoff.invest import Client, InstrumentIdType
 
-from examples.secrets.secrets import get_secrets
+from examples.secrets import get_secrets
 
 
 pd.set_option('display.max_rows', 50)
