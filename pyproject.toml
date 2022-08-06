@@ -1,0 +1,9 @@
+[tool.poetry]
+name = "TinkoffInvestExamples"
+version = "0.1.0"
+description = "Examples for Tinkoff Invest API with Python https://github.com/Tinkoff/invest-python"
+authors = ["Ruslan Kosarev <ruslan.kosarev@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
