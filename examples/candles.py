@@ -37,6 +37,7 @@ def candles():
                     'close': price_value(candle.close),
                     'volume': candle.volume,
                     'time': candle.time,
+                    'is_complete': candle.is_complete,
                 }
 
         df = pd.DataFrame(generator())
