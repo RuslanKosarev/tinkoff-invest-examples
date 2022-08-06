@@ -1,7 +1,6 @@
 
 import pandas as pd
 from tinkoff.invest import Client, InstrumentIdType
-from tinkoff.invest.services import InstrumentsService
 
 from examples.secrets.secrets import get_secrets
 
