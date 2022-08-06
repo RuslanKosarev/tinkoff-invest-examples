@@ -4,7 +4,12 @@ version = "0.1.0"
 description = "Examples for Tinkoff Invest API with Python https://github.com/Tinkoff/invest-python"
 authors = ["Ruslan Kosarev <ruslan.kosarev@gmail.com>"]
 
+[tool.poetry.scripts]
+"candles" = "examples.cli.candles:candles"
+
 [tool.poetry.dependencies]
 python = "^3.10"
 tinkoff-investments = "^0.2.0-beta.33"
+pydantic = "^1.9.1"
+pandas = "^1.4.3"
 
