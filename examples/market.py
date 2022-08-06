@@ -26,7 +26,7 @@ def market():
     api_key = secrets.get_api_key('tinvest_api_key')
 
     with Client(api_key) as client:
-        instruments: InstrumentsService = client.instruments
+        instruments = client.instruments
 
         for method in ('shares', 'bonds', 'etfs', 'currencies', 'futures'):
             df = pd.DataFrame(generator(instruments, method))
