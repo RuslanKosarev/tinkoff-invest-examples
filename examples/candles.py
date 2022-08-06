@@ -1,11 +1,17 @@
 
 import pandas as pd
 from tinkoff.invest import CandleInterval, Client
+
 from examples.secrets.secrets import get_secrets
 
 
 def price_value(x) -> float:
     return x.units + x.nano/1000000000
+
+
+pd.set_option('display.max_rows', 50)
+pd.set_option('display.max_columns', 500)
+pd.set_option('display.width', 1000)
 
 
 def candles():
