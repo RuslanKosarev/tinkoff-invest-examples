@@ -14,12 +14,14 @@ def candles():
     print(figi)
 
     secrets = get_secrets()
+    api_key = secrets.get_api_key('tinvest_api_key')
+
     interval = CandleInterval.CANDLE_INTERVAL_DAY
 
     end = pd.Timestamp.utcnow()
     start = end - pd.to_timedelta(30, unit='d')
 
-    with Client(secrets.get_api_key('tinvest_api_key')) as client:
+    with Client(api_key) as client:
         def generator():
             for candle in client.get_all_candles(
                     figi=figi,
@@ -38,7 +40,9 @@ def candles():
                         'time': candle.time,
                     }
 
-    df = pd.DataFrame(generator())
+        df = pd.DataFrame(generator())
+        df = df.set_index('time')
+
     print(df)
 
 
