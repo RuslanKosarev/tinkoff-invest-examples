@@ -33,7 +33,7 @@ def market():
             df = df.set_index('ticker')
 
             print()
-            print(f'Market instruments for {method}')
+            print(f'Market instruments for {method} (count {len(df)})')
             print(df)
 
 
