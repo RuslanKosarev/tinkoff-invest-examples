@@ -12,9 +12,9 @@ pd.set_option('display.width', 1000)
 
 
 @click.command()
-@click.option('-i', '--id_type', type=str, default='share',
-              help="ID type of the instrument, i.e. shares, bonds, etfs, currencies, or futures, "
-                   "default value is 'share'.")
+@click.option('-i', '--id_type',
+              type=click.Choice(['share', 'bond', 'etf', 'currency', 'future'], case_sensitive=False), default='share',
+              help="ID type of the instrument, default value is 'share'.")
 @click.option('-f', '--figi', type=str, default='BBG004730N88',
               help="FIGI for the instrument, 'BBG004730N88' is default value for SBER.")
 def instrument(id_type: str, figi: str):
