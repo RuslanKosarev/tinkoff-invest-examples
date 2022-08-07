@@ -2,7 +2,7 @@
 import pandas as pd
 from tinkoff.invest import CandleInterval, Client
 
-from examples.secrets import get_secrets
+from examples.utils.secrets import get_secrets
 
 
 def price_value(x) -> float:

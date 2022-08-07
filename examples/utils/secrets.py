@@ -5,9 +5,8 @@ from typing import Optional, Union
 
 from pydantic import BaseSettings
 
-ROOT_PATH = Path(__file__).parent
+from examples import ROOT_PATH
 
-SUFFIX = '_api_key'
 SECRETS_DIR_NAME = 'secrets'
 SECRETS_ENV_FILE_NAME = 'secrets.env'
 DEFAULT_SECRETS_DIR = ROOT_PATH.parent / SECRETS_DIR_NAME
