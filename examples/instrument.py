@@ -19,7 +19,7 @@ pd.set_option('display.width', 1000)
               help="FIGI for the instrument, 'BBG004730N88' is default value for SBER.")
 def instrument(id_type: str, figi: str):
     """
-    Example to load data for given FIGI, 'BBG004730N88' is default value for SBER.
+    Loads data for given FIGI, 'BBG004730N88' is default value for SBER.
     """
     secrets = get_secrets()
     api_key = secrets.get_api_key('tinvest_api_key')
