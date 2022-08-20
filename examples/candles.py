@@ -29,7 +29,7 @@ def candles(figi: str):
     interval = CandleInterval.CANDLE_INTERVAL_DAY
 
     end = pd.Timestamp.utcnow()
-    start = end - pd.to_timedelta(1000, unit='d')
+    start = end - pd.offsets.DateOffset(years=3)
 
     with Client(api_key) as client:
         def generator():
