@@ -1,4 +1,5 @@
 
+import click
 import pandas as pd
 from tinkoff.invest import CandleInterval, Client
 from tinkoff.invest.utils import quotation_to_decimal
@@ -15,9 +16,11 @@ pd.set_option('display.max_columns', 500)
 pd.set_option('display.width', 1000)
 
 
-def candles():
+@click.command()
+@click.option('-f', '--figi', type=str, default='BBG004730N88',
+              help="FIGI for the instrument, 'BBG004730N88' is default value for SBER.")
+def candles(figi: str):
 
-    figi = 'BBG011MLGP84'
     print(figi)
 
     secrets = get_secrets()
@@ -26,7 +29,7 @@ def candles():
     interval = CandleInterval.CANDLE_INTERVAL_DAY
 
     end = pd.Timestamp.utcnow()
-    start = end - pd.to_timedelta(30, unit='d')
+    start = end - pd.to_timedelta(1000, unit='d')
 
     with Client(api_key) as client:
         def generator():
