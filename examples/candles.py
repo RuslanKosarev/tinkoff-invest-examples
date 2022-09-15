@@ -18,7 +18,7 @@ pd.set_option('display.width', 1000)
 
 @click.command()
 @click.option('-f', '--figi', type=str, default='BBG004730N88',
-              help="FIGI for the instrument, 'BBG00YM3BX27' is default value for SBER.")
+              help="FIGI for the instrument, 'BBG004730N88' is default value for SBER.")
 def candles(figi: str):
 
     secrets = get_secrets()
