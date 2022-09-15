@@ -54,7 +54,7 @@ def candles(figi: str):
     # https://github.com/Tinkoff/invest-python/issues/104
     duplicated = df.index.duplicated()
     if any(duplicated):
-        print('Thera duplicated indexes in history', np.nonzero(duplicated)[0])
+        print('Thera duplicated indexes in history', df.index[duplicated])
 
 
 if __name__ == '__main__':
