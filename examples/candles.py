@@ -18,10 +18,8 @@ pd.set_option('display.width', 1000)
 
 @click.command()
 @click.option('-f', '--figi', type=str, default='BBG004730N88',
-              help="FIGI for the instrument, 'BBG004730N88' is default value for SBER.")
+              help="FIGI for the instrument, 'BBG00YM3BX27' is default value for SBER.")
 def candles(figi: str):
-
-    print(figi)
 
     secrets = get_secrets()
     api_key = secrets.get_api_key('tinvest_api_key')
@@ -29,11 +27,13 @@ def candles(figi: str):
     interval = CandleInterval.CANDLE_INTERVAL_DAY
 
     end = pd.Timestamp.utcnow()
-    start = end - pd.offsets.DateOffset(years=3)
+    begin = end - pd.offsets.DateOffset(years=10)
+
+    print(f'Load history for figi={figi} in the period=({begin}, {end})')
 
     with Client(api_key) as client:
         def generator():
-            for candle in client.get_all_candles(figi=figi, from_=start, to=end, interval=interval):
+            for candle in client.get_all_candles(figi=figi, from_=begin, to=end, interval=interval):
                 yield {
                     'open': quote_to_float(candle.open),
                     'high': quote_to_float(candle.high),
@@ -45,7 +45,8 @@ def candles(figi: str):
                 }
 
         df = pd.DataFrame(generator())
-        df = df.set_index('time')
+        if not df.empty:
+            df.set_index('time', inplace=True)
 
     print(df)
 
