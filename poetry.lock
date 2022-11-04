@@ -1,4 +1,12 @@
 [[package]]
+name = "cachetools"
+version = "5.2.0"
+description = "Extensible memoizing collections and decorators"
+category = "main"
+optional = false
+python-versions = "~=3.7"
+
+[[package]]
 name = "click"
 version = "8.1.3"
 description = "Composable command line interface toolkit"
@@ -11,29 +19,29 @@ colorama = {version = "*", markers = "platform_system == \"Windows\""}
 
 [[package]]
 name = "colorama"
-version = "0.4.5"
+version = "0.4.6"
 description = "Cross-platform colored terminal text."
 category = "main"
 optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
 
 [[package]]
 name = "grpcio"
-version = "1.48.0"
+version = "1.50.0"
 description = "HTTP/2-based RPC framework"
 category = "main"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.7"
 
 [package.dependencies]
 six = ">=1.5.2"
 
 [package.extras]
-protobuf = ["grpcio-tools (>=1.48.0)"]
+protobuf = ["grpcio-tools (>=1.50.0)"]
 
 [[package]]
 name = "numpy"
-version = "1.23.2"
+version = "1.23.4"
 description = "NumPy is the fundamental package for array computing with Python."
 category = "main"
 optional = false
@@ -41,7 +49,7 @@ python-versions = ">=3.8"
 
 [[package]]
 name = "pandas"
-version = "1.4.3"
+version = "1.5.1"
 description = "Powerful data structures for data analysis, time series, and statistics"
 category = "main"
 optional = false
@@ -57,7 +65,7 @@ test = ["hypothesis (>=5.5.3)", "pytest (>=6.0)", "pytest-xdist (>=1.31)"]
 
 [[package]]
 name = "protobuf"
-version = "3.20.1"
+version = "3.20.3"
 description = "Protocol Buffers"
 category = "main"
 optional = false
@@ -65,18 +73,18 @@ python-versions = ">=3.7"
 
 [[package]]
 name = "pydantic"
-version = "1.9.2"
+version = "1.10.2"
 description = "Data validation and settings management using python type hints"
 category = "main"
 optional = false
-python-versions = ">=3.6.1"
+python-versions = ">=3.7"
 
 [package.dependencies]
-typing-extensions = ">=3.7.4.3"
+typing-extensions = ">=4.1.0"
 
 [package.extras]
-email = ["email-validator (>=1.0.3)"]
 dotenv = ["python-dotenv (>=0.10.4)"]
+email = ["email-validator (>=1.0.3)"]
 
 [[package]]
 name = "python-dateutil"
@@ -102,7 +110,7 @@ cli = ["click (>=5.0)"]
 
 [[package]]
 name = "pytz"
-version = "2022.2.1"
+version = "2022.6"
 description = "World timezone definitions, modern and historical"
 category = "main"
 optional = false
@@ -126,15 +134,17 @@ python-versions = ">=3.6,<4.0"
 
 [[package]]
 name = "tinkoff-investments"
-version = "0.2.0b33"
+version = "0.2.0b40"
 description = ""
 category = "main"
 optional = false
 python-versions = ">=3.8,<4.0"
 
 [package.dependencies]
+cachetools = ">=5.2.0,<6.0.0"
 grpcio = ">=1.39.0,<2.0.0"
-protobuf = ">=3.19.3,<4.0.0"
+protobuf = ">=3.20.2,<4.0.0"
+pydantic = ">=1.9.2,<2.0.0"
 python-dateutil = ">=2.8.2,<3.0.0"
 tinkoff = ">=0.1.1,<0.2.0"
 
@@ -143,7 +153,7 @@ all = ["matplotlib (>=3.5.1,<4.0.0)", "mplfinance (>=0.12.8-beta.9,<0.13.0)", "n
 
 [[package]]
 name = "typing-extensions"
-version = "4.3.0"
+version = "4.4.0"
 description = "Backported and Experimental Type Hints for Python 3.7+"
 category = "main"
 optional = false
@@ -155,6 +165,7 @@ python-versions = "^3.10"
 content-hash = "bbe008e353002007215e42c7d86a24703006ba5345ad40b9a8e39e872e8d21d3"
 
 [metadata.files]
+cachetools = []
 click = []
 colorama = []
 grpcio = []
@@ -171,7 +182,4 @@ pytz = []
 six = []
 tinkoff = []
 tinkoff-investments = []
-typing-extensions = [
-    {file = "typing_extensions-4.3.0-py3-none-any.whl", hash = "sha256:25642c956049920a5aa49edcdd6ab1e06d7e5d467fc00e0506c44ac86fbfca02"},
-    {file = "typing_extensions-4.3.0.tar.gz", hash = "sha256:e6d2677a32f47fc7eb2795db1dd15c1f34eff616bcaf2cfb5e997f854fa1c4a6"},
-]
+typing-extensions = []

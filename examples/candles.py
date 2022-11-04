@@ -1,6 +1,5 @@
 
 import click
-import numpy as np
 import pandas as pd
 from tinkoff.invest import CandleInterval, Client
 from tinkoff.invest.utils import quotation_to_decimal
@@ -54,7 +53,7 @@ def candles(figi: str):
     # https://github.com/Tinkoff/invest-python/issues/104
     duplicated = df.index.duplicated()
     if any(duplicated):
-        print('Thera duplicated indexes in history', df.index[duplicated])
+        print('There are duplicated indexes in the history', df.index[duplicated])
 
 
 if __name__ == '__main__':
