@@ -27,36 +27,63 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7
 
 [[package]]
 name = "grpcio"
-version = "1.50.0"
+version = "1.51.1"
 description = "HTTP/2-based RPC framework"
 category = "main"
 optional = false
 python-versions = ">=3.7"
 
+[package.extras]
+protobuf = ["grpcio-tools (>=1.51.1)"]
+
+[[package]]
+name = "mypy"
+version = "0.991"
+description = "Optional static typing for Python"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
 [package.dependencies]
-six = ">=1.5.2"
+mypy-extensions = ">=0.4.3"
+tomli = {version = ">=1.1.0", markers = "python_version < \"3.11\""}
+typing-extensions = ">=3.10"
 
 [package.extras]
-protobuf = ["grpcio-tools (>=1.50.0)"]
+dmypy = ["psutil (>=4.0)"]
+install-types = ["pip"]
+python2 = ["typed-ast (>=1.4.0,<2)"]
+reports = ["lxml"]
+
+[[package]]
+name = "mypy-extensions"
+version = "0.4.3"
+description = "Experimental type system extensions for programs checked with the mypy typechecker."
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
 name = "numpy"
-version = "1.23.4"
-description = "NumPy is the fundamental package for array computing with Python."
+version = "1.24.0"
+description = "Fundamental package for array computing in Python"
 category = "main"
 optional = false
 python-versions = ">=3.8"
 
 [[package]]
 name = "pandas"
-version = "1.5.1"
+version = "1.5.2"
 description = "Powerful data structures for data analysis, time series, and statistics"
 category = "main"
 optional = false
 python-versions = ">=3.8"
 
 [package.dependencies]
-numpy = {version = ">=1.21.0", markers = "python_version >= \"3.10\""}
+numpy = [
+    {version = ">=1.21.0", markers = "python_version >= \"3.10\""},
+    {version = ">=1.23.2", markers = "python_version >= \"3.11\""},
+]
 python-dateutil = ">=2.8.1"
 pytz = ">=2020.1"
 
@@ -110,7 +137,7 @@ cli = ["click (>=5.0)"]
 
 [[package]]
 name = "pytz"
-version = "2022.6"
+version = "2022.7"
 description = "World timezone definitions, modern and historical"
 category = "main"
 optional = false
@@ -134,7 +161,7 @@ python-versions = ">=3.6,<4.0"
 
 [[package]]
 name = "tinkoff-investments"
-version = "0.2.0b40"
+version = "0.2.0b44"
 description = ""
 category = "main"
 optional = false
@@ -152,6 +179,14 @@ tinkoff = ">=0.1.1,<0.2.0"
 all = ["matplotlib (>=3.5.1,<4.0.0)", "mplfinance (>=0.12.8-beta.9,<0.13.0)", "numpy (>=1.22.2,<2.0.0)", "pandas (>=1.4.0,<2.0.0)"]
 
 [[package]]
+name = "tomli"
+version = "2.0.1"
+description = "A lil' TOML parser"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "typing-extensions"
 version = "4.4.0"
 description = "Backported and Experimental Type Hints for Python 3.7+"
@@ -162,13 +197,15 @@ python-versions = ">=3.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "bbe008e353002007215e42c7d86a24703006ba5345ad40b9a8e39e872e8d21d3"
+content-hash = "39fb5bc63dc0c0e22a68908746a12679c3bd8bafb051f8051eeb155633f9df95"
 
 [metadata.files]
 cachetools = []
 click = []
 colorama = []
 grpcio = []
+mypy = []
+mypy-extensions = []
 numpy = []
 pandas = []
 protobuf = []
@@ -182,4 +219,5 @@ pytz = []
 six = []
 tinkoff = []
 tinkoff-investments = []
+tomli = []
 typing-extensions = []
